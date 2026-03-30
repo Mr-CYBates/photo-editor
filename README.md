@@ -36,3 +36,4 @@ Automatic via Cloudflare Pages GitHub integration. Push to `main` → auto deplo
 ├── schema.sql        # D1 database schema
 └── wrangler.toml     # Cloudflare config
 ```
+# trigger rebuild
