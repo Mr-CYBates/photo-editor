@@ -3,11 +3,15 @@ name = "photo-editor"
 compatibility_date = "2024-12-01"
 pages_build_output_dir = "dist"
 
-[[d1_databases]]
-binding = "DB"
-database_name = "photo-editor-db"
-database_id = ""
-
-[[kv_namespaces]]
-binding = "KV"
-id = ""
+# D1 and KV bindings will be configured via Cloudflare Dashboard
+# after connecting GitHub integration.
+# Uncomment and fill in after creating D1 database and KV namespace:
+#
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "photo-editor-db"
+# database_id = "your-d1-database-id"
+#
+# [[kv_namespaces]]
+# binding = "KV"
+# id = "your-kv-namespace-id"

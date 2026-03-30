@@ -1,8 +1,8 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { setCookie } from 'hono/cookie';
-import type { Env, User } from './_api/types';
-import { PLAN_CREDITS, CREDIT_PACKS, PLAN_PRICES } from './_api/types';
+import type { Env, User } from '../_api/types';
+import { PLAN_CREDITS, CREDIT_PACKS, PLAN_PRICES } from '../_api/types';
 import {
   signJWT,
   verifyJWT,
@@ -10,10 +10,10 @@ import {
   getGoogleUserInfo,
   findOrCreateUser,
   buildGoogleAuthUrl,
-} from './_api/auth';
-import { authMiddleware, optionalAuthMiddleware } from './_api/middleware';
-import { checkAndDeductCredit, processRemoveBg } from './_api/removebg';
-import { getHistory, createHistory, deleteHistory } from './_api/history';
+} from '../_api/auth';
+import { authMiddleware, optionalAuthMiddleware } from '../_api/middleware';
+import { checkAndDeductCredit, processRemoveBg } from '../_api/removebg';
+import { getHistory, createHistory, deleteHistory } from '../_api/history';
 
 type CFEnv = {
   Bindings: Env;
@@ -142,5 +142,5 @@ export default app;
 
 // Cloudflare Pages Functions handler
 export const onRequest: PagesFunction<Env> = async (context) => {
-  return app.fetch(context.request, context.env, context);
+  return app.fetch(context.request, context.env as Env, context);
 };
